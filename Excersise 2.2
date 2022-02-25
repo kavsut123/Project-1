@@ -1,0 +1,5 @@
+# Create data.frame of inputs to our function.
+  df <- expand.grid(n = ns, delta = deltas)
+  
+  # Apply the function to each row of the data.frame.
+  df$tII <- apply(df, 1, type_II, quant = quant, var = var, r = r)
