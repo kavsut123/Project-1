@@ -1,16 +1,14 @@
-type_II <- function(alpha, delta, var, n, r, two_sided = FALSE) {
+type_II <- function(x, quant, var, r) {
   # Calculates type II error of a z-test of means given
-  # alpha - the nominal type I error rate
+  # x - c(n, delta)
+  # n - sample size in group 1
+  # r- is the ration between sample zies n1 and n2.
   # delta - the hypothesised mean difference
+  # quant - the critical value
   # var - the variance of the continuous outcome
-  # n - the sample size in group 1
-  # r- represents the ratio between the two sample sizes n1 and n2.
-  # two_sided -TRUE indicates a two-sided test is needed, FALSE a 
-  # one-sided test.
   
-  # Get the critical value to use in the hypothesis test.
-  quant <- qnorm(p = 1 - alpha, mean = 0, sd = 1)
-  if(two_sided) quant <- qnorm(p = 1 - alpha/2, mean = 0, sd = 1)
+  n <- x[1]
+  delta <- x[2]
   
   tII <- pnorm(q = quant - delta / sqrt(var / n + var / ceiling(r*n)), mean = 0, sd = 1)
   return(tII)
