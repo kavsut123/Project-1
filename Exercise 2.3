@@ -1,0 +1,20 @@
+#Parameters: Here we set out what our parameters will be.
+lambda=0.5
+gamma=0.8
+n1=60
+n2=30
+
+set.seed(283765)
+
+# Simulate theta from its prior, and then the stage 1 data conditional 
+# on this theta.
+
+# Initialise our variable outwith the desired range.
+theta <- 2
+
+while(theta < 0 | theta > 1) theta <- rnorm(1, mean = 2, sd = 3)
+
+# Print out our sample.
+theta
+
+y1 <- rbinom(1, n1, theta)
