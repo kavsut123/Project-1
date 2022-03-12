@@ -3,6 +3,8 @@ Error_func=function(N,theta,c,type){
   #Theta is the value of theta we are using.
   #c is the critical value
   #type is the type of error we want
+  
+  #Error is a vector to store the errors in.
   Error=numeric(100)
   for(i in 1:100){
     x=rbinom(N,i,theta)
@@ -14,4 +16,6 @@ Error_func=function(N,theta,c,type){
       Error[i]=1-mean(x>=c*i)
     }
   }
+  #prints out the errors vector
+  Error
 }
