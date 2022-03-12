@@ -38,7 +38,7 @@ abline(h=0.2, col="red")
 abline(v=75,lty=2)
 legend(65,0.5,legend = c("Error=0.2","Sample Size of 75"),col=c("red","black"),lty=c(1,2))
 
-
+#Using the above code we have determined the following parameters
 n1=40
 n2=75
 lambda=0.65
@@ -46,6 +46,7 @@ gamma=0.985
 
 #Number of simulations
 M=10000
+
 # Create an empty vector to store simulated NS.
 Ns=numeric(M)
 for (i in 1:M) {
