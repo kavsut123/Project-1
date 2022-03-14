@@ -4,3 +4,7 @@ y1_prob= function(y1, n1) {
   
   choose(n1, y1) * beta(y1 + 0.5, n1 - y1 + 0.5) / beta(0.5, 0.5)
 }
+
+
+#Unit test of the function
+sum(y1_prob(0:10,10))
