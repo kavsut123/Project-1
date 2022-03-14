@@ -8,7 +8,7 @@ evaluate_design= function(lambda, gamma, n1, n2) {
   c1= 1 - lambda * (n1 / n2)^gamma
   
   # Vector of possible stage 1 outcomes.
-  y1s=o:n1
+  y1s=0:n1
   
   # Vector of corresponding progression decisions.
   stops = pbeta(0.5, y1s + 0.5, n1 - y1s + 0.5) < c1
