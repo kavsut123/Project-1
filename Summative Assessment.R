@@ -41,9 +41,11 @@ legend(65,0.5,legend = c("Error=0.2","Sample Size of 75"),col=c("red","black"),l
 #Using the above code we have determined the following parameters
 n1=40
 n2=75
-lambda=0.65
-gamma=0.985
+lambda=0.8
+gamma=2
 
+
+#Timed running of the monte carlo estimation.
 ptm <- proc.time()
 eval_desgn(n1,n2,lambda,gamma)
 proc.time() - ptm
